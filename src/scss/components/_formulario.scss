@@ -1,0 +1,81 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.formulario {
+ 
+  .formulario__field {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        font-weight: 700;
+        color: #555;
+        margin: 0.2rem 0;
+    }
+
+    input {
+        padding: 0.5rem;
+        border-radius: 15px;
+        border: solid 2px lighten(gray, $amount: 40);
+    }
+        
+    
+        select {
+            padding: 0.5rem;
+            border-radius: 15px;
+        border: solid 2px lighten(gray, $amount: 40);
+    
+        &:first-child {
+                border-radius: 15px 0 0 15px;
+            }
+        }
+
+    .formulario__agrupar {
+        display: flex;
+        justify-content: space-between;
+        
+            select {
+                flex: 9.5;
+            }
+                
+        button {
+            width: 20px;
+            height: auto;
+            background-color: #0073b7;
+            color: white;
+            flex: 0.5;
+            border: none;
+                border-radius: 0 15px 15px 0;
+            
+            &:active {
+                    background-color: darken(#0073b7, 20);
+                    transform: translateY(-1px);
+                    transform: translateX(-1px);
+                }
+        }
+    }
+        
+}
+
+.formulario__doble {
+    display: flex;
+    flex-direction: column;
+    width: 102%;
+    
+    .abonos-select {
+        border-radius: 1.5rem !important;
+    }
+
+    @include m.tablet {
+        flex-direction: row;
+    }
+
+    input:disabled {
+        background-color: #f1f1f1;
+    }
+}
+}
